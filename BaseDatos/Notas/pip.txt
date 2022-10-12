@@ -1,0 +1,5 @@
+#INSTALAR POSTGRES
+pip install psycopg2 # windows
+pip install psycopg2-binary #mac
+#INSTALAR MYSQL
+pip install mysql-connector
