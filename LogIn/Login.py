@@ -4,7 +4,7 @@ from tkinter import ttk, messagebox
 from PIL import ImageTk, Image
 
 ventana = tk.Tk()
-ventana.geometry('600x400')
+ventana.geometry('320x150')
 ventana.title('Login')
 ventana.iconbitmap('login.ico')
 
