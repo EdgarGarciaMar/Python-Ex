@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox,scrolledtext
 
 class tabulador(tk.Tk):
     def __init__(self):
@@ -32,10 +32,27 @@ class tabulador(tk.Tk):
         boton1 = ttk.Button(tabulador1,text="Enviar",command=enviar)
         boton1.grid(row=1,column=0,columnspan=2)
 
-        tabulador2 =ttk.LabelFrame(control_tabulador,text="Contenido")
+        #Tabulador con scrolltext
+        tabulador2 =ttk.LabelFrame(control_tabulador,text="scroll")
         control_tabulador.add(tabulador2,text="Tabulador 2")
 
+        def crear_componentes_tabulador2(tabulador2):
+            text = "Texto del scroll"
+            #creacion del tabulador
+            scroll = scrolledtext.ScrolledText(tabulador2,width=50,height=10,wrap=tk.WORD)
+            scroll.insert(tk.INSERT,text)
+            scroll.grid(row=0,column=0)
+        crear_componentes_tabulador2(tabulador2)
+        #datalist-combobox
+        tabulador3 = ttk.LabelFrame(control_tabulador, text="combobox")
+        control_tabulador.add(tabulador3, text="Tabulador 3")
+        def crear_componentes_tabulador3(tabulador):
+            datos = [x+1 for x in range(10)] #list comprenhension
+            combobox = ttk.Combobox(tabulador,width=15,values=datos)
+            combobox.grid(row=0,column=0,padx=10,pady=10)
+            combobox.current(5-1)
 
+        crear_componentes_tabulador3(tabulador3)
 if __name__ == '__main__':
     ventana = tabulador()
     ventana.mainloop()
